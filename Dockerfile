@@ -11,8 +11,8 @@ RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/bi
     && ln -s /opt/apache-maven-${MAVEN_VERSION} ${MAVEN_HOME} \
     && rm -rf /tmp/*
 
-COPY . /demo
-WORKDIR /demo
+COPY . /app
+WORKDIR /app
 RUN mvn clean package
 COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
