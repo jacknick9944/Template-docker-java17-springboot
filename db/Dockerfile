@@ -1,0 +1,11 @@
+FROM mysql:8.0.27
+LABEL authors="jackd"
+
+ENV MYSQL_ROOT_PASSWORD=root_password
+ENV MYSQL_DATABASE=db
+ENV MYSQL_USER=user
+ENV MYSQL_PASSWORD=12345678
+
+EXPOSE 3306
+
+CMD ["mysqld"]
